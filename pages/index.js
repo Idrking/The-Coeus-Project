@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Logo from "../components/logo";
+import Menu from "../components/menu";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
 
       <Logo />
+      <Menu />
     </>
   );
 }
