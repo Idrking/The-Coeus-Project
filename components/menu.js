@@ -1,17 +1,14 @@
-import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
+import MobileMenu from "../components/mobileMenu";
+import DesktopMenu from "../components/desktopMenu";
 
 const Menu = () => {
-  let mql = { matches: false };
-  useEffect(() => {
-    mql = window.matchMedia("(max-width: 600px)");
-    console.log(mql);
-  }, []);
+  const largeScreen = useMediaQuery({ query: "(min-device-width: 1224px)" });
 
   return (
     <nav>
-      {mql.matches && <p>The window is small</p>}
-      {!mql.matches && <p>This window is big</p>}
-      <p> This is here regardless</p>
+      {largeScreen && <DesktopMenu />}
+      {!largeScreen && <MobileMenu />}
     </nav>
   );
 };
